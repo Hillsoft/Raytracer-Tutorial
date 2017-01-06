@@ -1,6 +1,10 @@
 #ifndef MATHS_H
 #define MATHS_H
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 inline float sqr(float n)
 {
 	return n * n;

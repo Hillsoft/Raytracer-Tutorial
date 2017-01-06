@@ -111,10 +111,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="math.h" />
+    <ClInclude Include="ray.h" />
+    <ClInclude Include="shape.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math.cpp" />
+    <ClCompile Include="ray.cpp" />
+    <ClCompile Include="shape.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
