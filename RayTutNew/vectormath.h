@@ -5,6 +5,10 @@
 #define NULL 0
 #endif
 
+#ifndef PI
+#define PI 3.1415926f
+#endif
+
 inline float sqr(float n)
 {
 	return n * n;

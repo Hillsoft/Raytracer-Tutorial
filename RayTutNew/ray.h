@@ -1,7 +1,7 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include "math.h"
+#include "vectormath.h"
 
 // In order to prevent bouncing rays self-intersecting
 #define RAY_T_MIN 0.0001f

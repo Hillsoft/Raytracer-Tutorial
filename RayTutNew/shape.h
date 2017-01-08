@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "math.h"
+#include "vectormath.h"
 #include "ray.h"
 
 class Shape

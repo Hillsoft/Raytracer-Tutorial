@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "math.h"
+#include "vectormath.h"
 
 Vector::Vector()
 	: x(0.0f),
