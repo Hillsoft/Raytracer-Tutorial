@@ -44,7 +44,8 @@ bool ShapeSet::doesIntersect(const Ray& ray)
 }
 
 
-Plane::Plane(const Point& position, const Vector& normal, const Color& color)
+Plane::Plane(const Point& position, const Vector& normal,
+	const Color& color)
 	: position(position),
 	normal(normal),
 	color(color)
@@ -107,7 +108,8 @@ bool Plane::doesIntersect(const Ray& ray)
 }
 
 
-Sphere::Sphere(const Point& centre, float radius, const Color& color)
+Sphere::Sphere(const Point& centre, float radius,
+	const Color& color)
 	: centre(centre),
 	radius(radius),
 	color(color)

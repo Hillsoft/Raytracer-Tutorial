@@ -10,7 +10,8 @@ void rayTrace(Image& image, Camera* camera, Shape* scene)
 	{
 		for (int y = 0; y < image.getHeight(); y++)
 		{
-			Vector2 screenCoord((2.0f*x) / image.getWidth() - 1.0f, (-2.0f*y) / image.getHeight() + 1.0f);
+			Vector2 screenCoord((2.0f*x) / image.getWidth() - 1.0f,
+				(-2.0f*y) / image.getHeight() + 1.0f);
 			Ray ray = camera->makeRay(screenCoord);
 
 			Color* curPixel = image.getPixel(x, y);
@@ -32,18 +33,22 @@ int main(int argc, char *argv[])
 {
 	// QCoreApplication a(argc, argv);
 
-	int width = 640;
-	int height = 480;
+	int width = 1920;
+	int height = 1080;
 
 	Image image(width, height);
-	PerspectiveCamera camera(Point(-5.0f, 1.0f, 0.0f), Vector(0.0f, 1.0f, 0.0f), Vector(), PI / 4, (float)width / (float)height);
+	PerspectiveCamera camera(Point(-5.0f, 1.0f, 0.0f),
+		Vector(0.0f, 1.0f, 0.0f), Vector(), PI / 4,
+		(float)width / (float)height);
 
 	ShapeSet scene;
 
-	Plane floor(Point(0.0f, 0.0f, 0.0f), Vector(), Color(0.5f, 1.0f, 0.5f));
+	Plane floor(Point(0.0f, 0.0f, 0.0f), Vector(),
+		Color(0.5f, 1.0f, 0.5f));
 	scene.addShape(&floor);
 
-	Sphere sphere(Point(0.0f, 1.0f, 0.0f), 1.0f, Color(0.5f, 0.5f, 1.0f));
+	Sphere sphere(Point(0.0f, 1.0f, 0.0f), 1.0f,
+		Color(0.5f, 0.5f, 1.0f));
 	scene.addShape(&sphere);
 
 	rayTrace(image, &camera, &scene);

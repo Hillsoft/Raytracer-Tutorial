@@ -2,7 +2,8 @@
 
 #include <cmath>
 
-PerspectiveCamera::PerspectiveCamera(Point origin, Vector target, Vector upguide, float fov, float aspectRatio)
+PerspectiveCamera::PerspectiveCamera(Point origin,
+	Vector target, Vector upguide, float fov, float aspectRatio)
 	: origin(origin)
 {
 	forward = (target - origin).normalized();
@@ -15,7 +16,8 @@ PerspectiveCamera::PerspectiveCamera(Point origin, Vector target, Vector upguide
 
 Ray PerspectiveCamera::makeRay(Vector2 point) const
 {
-	Vector direction = forward + point.u * w * right + point.v * h * up;
+	Vector direction =
+		forward + point.u * w * right + point.v * h * up;
 
 	return Ray(origin, direction.normalized());
 }
