@@ -44,9 +44,10 @@ bool ShapeSet::doesIntersect(const Ray& ray)
 }
 
 
-Plane::Plane(const Point& position, const Vector& normal)
+Plane::Plane(const Point& position, const Vector& normal, const Color& color)
 	: position(position),
-	normal(normal)
+	normal(normal),
+	color(color)
 {
 }
 
@@ -77,6 +78,7 @@ bool Plane::intersect(Intersection& intersection)
 
 	intersection.t = t;
 	intersection.pShape = this;
+	intersection.color = color;
 
 	return true;
 }
@@ -105,9 +107,10 @@ bool Plane::doesIntersect(const Ray& ray)
 }
 
 
-Sphere::Sphere(const Point& centre, float radius)
+Sphere::Sphere(const Point& centre, float radius, const Color& color)
 	: centre(centre),
-	radius(radius)
+	radius(radius),
+	color(color)
 {
 }
 
@@ -155,6 +158,7 @@ bool Sphere::intersect(Intersection& intersection)
 
 	// Finish populating intersection
 	intersection.pShape = this;
+	intersection.color = color;
 
 	return true;
 }

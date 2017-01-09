@@ -2,6 +2,7 @@
 #define RAY_H
 
 #include "vectormath.h"
+#include "color.h"
 
 // In order to prevent bouncing rays self-intersecting
 #define RAY_T_MIN 0.0001f
@@ -34,6 +35,7 @@ struct Intersection
 	Ray ray;
 	float t;
 	Shape *pShape;
+	Color color;
 
 	Intersection();
 	Intersection(const Intersection& i);

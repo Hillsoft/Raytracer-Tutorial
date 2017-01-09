@@ -3,13 +3,13 @@
 
 #include <string>
 
-// Currently grayscale
+#include "color.h"
 
 class Image
 {
 protected:
 	int width, height;
-	float* data;
+	Color* data;
 
 public:
 	Image(int width, int height);
@@ -19,9 +19,9 @@ public:
 	int getWidth() const;
 	int getHeight() const;
 
-	float* getPixel(int x, int y);
+	Color* getPixel(int x, int y);
 
-	void saveImage(std::string filename) const;
+	void saveImage(std::string filename, float exposure = 1.0f, float gamma = 2.2f) const;
 };
 
 #endif

@@ -13,16 +13,16 @@ void rayTrace(Image& image, Camera* camera, Shape* scene)
 			Vector2 screenCoord((2.0f*x) / image.getWidth() - 1.0f, (-2.0f*y) / image.getHeight() + 1.0f);
 			Ray ray = camera->makeRay(screenCoord);
 
-			float* curPixel = image.getPixel(x, y);
+			Color* curPixel = image.getPixel(x, y);
 
 			Intersection intersection(ray);
 			if (scene->intersect(intersection))
 			{
-				*curPixel = 1.0f;
+				*curPixel = intersection.color;
 			}
 			else
 			{
-				*curPixel = 0.0f;
+				*curPixel = Color(0.0f);
 			}
 		}
 	}
@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
 
 	ShapeSet scene;
 
-	Plane floor(Point(0.0f, 0.0f, 0.0f), Vector());
+	Plane floor(Point(0.0f, 0.0f, 0.0f), Vector(), Color(0.5f, 1.0f, 0.5f));
 	scene.addShape(&floor);
 
-	Sphere sphere(Point(0.0f, 1.0f, 0.0f), 1.0f);
+	Sphere sphere(Point(0.0f, 1.0f, 0.0f), 1.0f, Color(0.5f, 0.5f, 1.0f));
 	scene.addShape(&sphere);
 
 	rayTrace(image, &camera, &scene);

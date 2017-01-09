@@ -36,9 +36,10 @@ class Plane : public Shape
 protected:
 	Point position;
 	Vector normal;
+	Color color;
 
 public:
-	Plane(const Point& position, const Vector& normal);
+	Plane(const Point& position, const Vector& normal, const Color& color = Color(1.0f, 1.0f, 1.0f));
 
 	virtual ~Plane();
 
@@ -51,9 +52,10 @@ class Sphere : public Shape
 protected:
 	Point centre;
 	float radius;
+	Color color;
 
 public:
-	Sphere(const Point& centre, float radius);
+	Sphere(const Point& centre, float radius, const Color& color = Color(1.0f, 1.0f, 1.0f));
 
 	virtual ~Sphere();
 
