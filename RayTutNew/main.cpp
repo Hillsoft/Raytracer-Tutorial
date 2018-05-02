@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 	Image image(width, height);
 	PerspectiveCamera camera(Point(-5.0f, 1.0f, 0.0f),
-		Vector(0.0f, 1.0f, 0.0f), Vector(), PI / 4,
+		Vector(0.0f, 1.0f, 0.0f), Vector(), 25.0f * PI / 180.0f,
 		(float)width / (float)height);
 
 	ShapeSet scene;
